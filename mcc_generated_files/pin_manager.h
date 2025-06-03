@@ -56,6 +56,152 @@
 */
 /**
   @Summary
+    Sets the GPIO pin, RA0, high using LATA0.
+
+  @Description
+    Sets the GPIO pin, RA0, high using LATA0.
+
+  @Preconditions
+    The RA0 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RA0 high (1)
+    LASER_SetHigh();
+    </code>
+
+*/
+#define LASER_SetHigh()          (_LATA0 = 1)
+/**
+  @Summary
+    Sets the GPIO pin, RA0, low using LATA0.
+
+  @Description
+    Sets the GPIO pin, RA0, low using LATA0.
+
+  @Preconditions
+    The RA0 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RA0 low (0)
+    LASER_SetLow();
+    </code>
+
+*/
+#define LASER_SetLow()           (_LATA0 = 0)
+/**
+  @Summary
+    Toggles the GPIO pin, RA0, using LATA0.
+
+  @Description
+    Toggles the GPIO pin, RA0, using LATA0.
+
+  @Preconditions
+    The RA0 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Toggle RA0
+    LASER_Toggle();
+    </code>
+
+*/
+#define LASER_Toggle()           (_LATA0 ^= 1)
+/**
+  @Summary
+    Reads the value of the GPIO pin, RA0.
+
+  @Description
+    Reads the value of the GPIO pin, RA0.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    uint16_t portValue;
+
+    // Read RA0
+    postValue = LASER_GetValue();
+    </code>
+
+*/
+#define LASER_GetValue()         _RA0
+/**
+  @Summary
+    Configures the GPIO pin, RA0, as an input.
+
+  @Description
+    Configures the GPIO pin, RA0, as an input.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RA0 as an input
+    LASER_SetDigitalInput();
+    </code>
+
+*/
+#define LASER_SetDigitalInput()  (_TRISA0 = 1)
+/**
+  @Summary
+    Configures the GPIO pin, RA0, as an output.
+
+  @Description
+    Configures the GPIO pin, RA0, as an output.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RA0 as an output
+    LASER_SetDigitalOutput();
+    </code>
+
+*/
+#define LASER_SetDigitalOutput() (_TRISA0 = 0)
+/**
+  @Summary
     Sets the GPIO pin, RA4, high using LATA4.
 
   @Description
@@ -511,11 +657,11 @@
   @Example
     <code>
     // Set RB10 high (1)
-    PUSH_SetHigh();
+    MAG_SetHigh();
     </code>
 
 */
-#define PUSH_SetHigh()          (_LATB10 = 1)
+#define MAG_SetHigh()          (_LATB10 = 1)
 /**
   @Summary
     Sets the GPIO pin, RB10, low using LATB10.
@@ -535,11 +681,11 @@
   @Example
     <code>
     // Set RB10 low (0)
-    PUSH_SetLow();
+    MAG_SetLow();
     </code>
 
 */
-#define PUSH_SetLow()           (_LATB10 = 0)
+#define MAG_SetLow()           (_LATB10 = 0)
 /**
   @Summary
     Toggles the GPIO pin, RB10, using LATB10.
@@ -559,11 +705,11 @@
   @Example
     <code>
     // Toggle RB10
-    PUSH_Toggle();
+    MAG_Toggle();
     </code>
 
 */
-#define PUSH_Toggle()           (_LATB10 ^= 1)
+#define MAG_Toggle()           (_LATB10 ^= 1)
 /**
   @Summary
     Reads the value of the GPIO pin, RB10.
@@ -585,11 +731,11 @@
     uint16_t portValue;
 
     // Read RB10
-    postValue = PUSH_GetValue();
+    postValue = MAG_GetValue();
     </code>
 
 */
-#define PUSH_GetValue()         _RB10
+#define MAG_GetValue()         _RB10
 /**
   @Summary
     Configures the GPIO pin, RB10, as an input.
@@ -609,11 +755,11 @@
   @Example
     <code>
     // Sets the RB10 as an input
-    PUSH_SetDigitalInput();
+    MAG_SetDigitalInput();
     </code>
 
 */
-#define PUSH_SetDigitalInput()  (_TRISB10 = 1)
+#define MAG_SetDigitalInput()  (_TRISB10 = 1)
 /**
   @Summary
     Configures the GPIO pin, RB10, as an output.
@@ -633,11 +779,11 @@
   @Example
     <code>
     // Sets the RB10 as an output
-    PUSH_SetDigitalOutput();
+    MAG_SetDigitalOutput();
     </code>
 
 */
-#define PUSH_SetDigitalOutput() (_TRISB10 = 0)
+#define MAG_SetDigitalOutput() (_TRISB10 = 0)
 /**
   @Summary
     Sets the GPIO pin, RB12, high using LATB12.
